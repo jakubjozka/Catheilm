@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<GameItems>
+	<Weapons>
+		<Weapon ID ="1001" Name="Weak branch" Price="1" MinimumDamage="1" MaximumDamage="3"/>
+		<Weapon ID ="1002" Name="Legendary sword" Price="20" MinimumDamage="50" MaximumDamage="100"/>
+		<Weapon ID ="1501" Name="Snake fangs" Price="0" MinimumDamage="0" MaximumDamage="2"/>
+		<Weapon ID ="1502" Name="Rat claws" Price="0" MinimumDamage="0" MaximumDamage="2"/>
+		<Weapon ID ="1503" Name="Spider fangs" Price="0" MinimumDamage="0" MaximumDamage="4"/>
+	</Weapons>
+	<HealingItems>
+		<HealingItem ID="2001" Name="Minor health potion" Price="2" HitPointsToHeal="2"/>
+		<HealingItem ID="2002" Name="Health potion" Price="5" HitPointsToHeal="4"/>
+		<HealingItem ID="2003" Name="Greater health potion" Price="10" HitPointsToHeal="7"/>
+	</HealingItems>
+	<MiscellaneousItems>
+		<MiscellaneousItem ID="3001" Name="Red Herb" Price="1"/>
+		<MiscellaneousItem ID="3002" Name="Clear Water" Price="1"/>
+		<MiscellaneousItem ID="3003" Name="Ground Bone Dust" Price="2"/>
+		<MiscellaneousItem ID="3004" Name="SunBlossom Petal" Price="1"/>
+		<MiscellaneousItem ID="3005" Name="Lesser Blood Essence" Price="3"/>
+		<MiscellaneousItem ID="3006" Name="Greater Blood Essence" Price="5"/>
+		<MiscellaneousItem ID="9001" Name="Snake skin" Price="2"/>
+		<MiscellaneousItem ID="9002" Name="Snake eye" Price="5"/>
+		<MiscellaneousItem ID="9003" Name="Rat tail" Price="1"/>
+		<MiscellaneousItem ID="9004" Name="Rat fur" Price="2"/>
+		<MiscellaneousItem ID="9005" Name="Spider eye" Price="3"/>
+		<MiscellaneousItem ID="9006" Name="Spider silk" Price="2"/>
+	</MiscellaneousItems>
+</GameItems>

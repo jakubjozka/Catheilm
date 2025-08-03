@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <GameItems>
 	<Weapons>
-		<Weapon ID ="1001" Name="Weak branch" Price="1" MinimumDamage="1" MaximumDamage="3"/>
-		<Weapon ID ="1002" Name="Legendary sword" Price="20" MinimumDamage="50" MaximumDamage="100"/>
-		<Weapon ID ="1501" Name="Snake fangs" Price="0" MinimumDamage="0" MaximumDamage="2"/>
-		<Weapon ID ="1502" Name="Rat claws" Price="0" MinimumDamage="0" MaximumDamage="2"/>
-		<Weapon ID ="1503" Name="Spider fangs" Price="0" MinimumDamage="0" MaximumDamage="4"/>
+		<Weapon ID ="1001" Name="Weak branch" Price="1" DamageDice="1d2"/>
+		<Weapon ID ="1002" Name="Legendary sword" Price="20" DamageDice="1d100"/>
+		<Weapon ID ="1501" Name="Snake fangs" Price="0" DamageDice="1d2"/>
+		<Weapon ID ="1502" Name="Rat claws" Price="0" DamageDice="1d2"/>
+		<Weapon ID ="1503" Name="Spider fangs" Price="0" DamageDice="1d4"/>
 	</Weapons>
 	<HealingItems>
 		<HealingItem ID="2001" Name="Minor health potion" Price="2" HitPointsToHeal="2"/>

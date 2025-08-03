@@ -67,8 +67,7 @@ namespace Engine.Factories
                 {
                     gameItem.Action =
                         new AttackWithWeapon(gameItem,
-                                             node.AttributesAsInt("MinimumDamage"),
-                                             node.AttributesAsInt("MaximumDamage"));
+                                             node.AttributesAsString("DamageDice"));
                 }
                 else if (itemCategory == GameItem.ItemCategory.Consumable)
                 {

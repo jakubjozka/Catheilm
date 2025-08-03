@@ -4,12 +4,14 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Newtonsoft.Json;
 
 namespace Engine.Models
 {
     public abstract class LivingEntity : BaseNotificationClass
     {
         private string _name;
+        private int _dexterity;
         private int _currentHitPoints;
         private int _maximumHitPoints;
         private int _gold;
@@ -23,6 +25,16 @@ namespace Engine.Models
             private set
             {
                 _name = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public int Dexterity
+        {
+            get { return _dexterity; }
+            protected set
+            {
+                _dexterity = value;
                 OnPropertyChanged();
             }
         }
@@ -121,14 +133,19 @@ namespace Engine.Models
 
         public bool HasConsumable => Consumables.Any();
 
-        public bool IsDead => CurrentHitPoints <= 0;
+        [JsonIgnore]
+        public bool IsAlive => CurrentHitPoints > 0;
+        [JsonIgnore]
+        public bool IsDead => !IsAlive;
 
         public event EventHandler OnKilled;
         public event EventHandler<string> OnActionPerformed;
 
-        protected LivingEntity(string name, int maximumHitPoints, int currentHitPoints, int gold, int level = 1)
+        protected LivingEntity(string name, int maximumHitPoints, int currentHitPoints, 
+                               int dexterity, int gold, int level = 1)
         {
             Name = name;
+            Dexterity = dexterity;
             MaximumHitPoints = maximumHitPoints;
             CurrentHitPoints = currentHitPoints;
             Gold = gold;

@@ -46,6 +46,7 @@ namespace Engine.Factories
                                               node.AttributesAsString("Name"),
                                               $".{rootImagePath}{node.AttributesAsString("ImageName")}",
                                               node.AttributesAsInt("MaximumHitPoints"),
+                                              Convert.ToInt32(node.SelectSingleNode("./Dexterity").InnerText),
                                               ItemFactory.CreateGameItem(node.AttributesAsInt("WeaponID")),
                                               node.AttributesAsInt("RewardXP"),
                                               node.AttributesAsInt("Gold"));

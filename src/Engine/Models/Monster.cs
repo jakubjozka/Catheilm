@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using Engine.Factories;
+using Engine.Services;
 
 namespace Engine.Models
 {
@@ -12,10 +13,10 @@ namespace Engine.Models
         public int RewardExperiencePoints { get; }
 
         public Monster(int id, string name, string imageName, 
-                       int maximumHitPoints,
+                       int maximumHitPoints, int dexterity,
                        GameItem currentWeapon,
                        int rewardExperiencePoints, int gold) :
-            base(name, maximumHitPoints, maximumHitPoints, gold)
+            base(name, maximumHitPoints, maximumHitPoints, dexterity, gold)
         {
             ID = id;
             ImageName = imageName;
@@ -32,14 +33,14 @@ namespace Engine.Models
 
         public Monster GetNewInstance()
         {
-            Monster newMonster = new Monster(ID, Name, ImageName, MaximumHitPoints,
+            Monster newMonster = new Monster(ID, Name, ImageName, MaximumHitPoints, Dexterity,
                                               CurrentWeapon, RewardExperiencePoints, Gold);
 
             foreach (ItemPercentage itemPercentage in _lootTable)
             {
                 newMonster.AddItemToLootTable(itemPercentage.ID, itemPercentage.Percentage);
 
-                if (RandomNumberGenerator.NumberBetween(1, 100) <= itemPercentage.Percentage)
+                if (DiceService.Instance.Roll(100).Value <= itemPercentage.Percentage)
                 {
                     newMonster.AddItemToInventory(ItemFactory.CreateGameItem(itemPercentage.ID));
                 }

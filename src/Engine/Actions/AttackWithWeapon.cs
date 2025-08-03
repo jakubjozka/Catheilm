@@ -5,15 +5,16 @@ using System.Security.Permissions;
 using System.Text;
 using System.Threading.Tasks;
 using Engine.Models;
+using Engine.Services;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace Engine.Actions
 {
     public class AttackWithWeapon : BaseAction, IAction
     {
-        private readonly int _minimumDamage;
-        private readonly int _maximumDamage;
+        private readonly string _damageDice;
 
-        public AttackWithWeapon(GameItem itemInUse, int minimumDamage, int maximumDamage)
+        public AttackWithWeapon(GameItem itemInUse, string damageDice)
             : base(itemInUse)
         {
             if (itemInUse.Category != GameItem.ItemCategory.Weapon)
@@ -21,33 +22,28 @@ namespace Engine.Actions
                 throw new ArgumentException($"{itemInUse.Name} is not a weapon");
             }
 
-            if (minimumDamage < 0)
+            if (string.IsNullOrWhiteSpace(damageDice))
             {
-                throw new ArgumentException("Minimum damage cannot be negative");
+                throw new ArgumentException("Dice damage must be a valid dice notation");
             }
 
-            if (maximumDamage < minimumDamage)
-            {
-                throw new ArgumentException("Maximum damage cannot be less than minimum damage");
-            }
-
-            _minimumDamage = minimumDamage;
-            _maximumDamage = maximumDamage;
+            _damageDice = damageDice;
         }
 
         public void Execute(LivingEntity actor, LivingEntity target)
         {
-            int damage = RandomNumberGenerator.NumberBetween(_minimumDamage, _maximumDamage);
-
             string actorName = (actor is Player) ? "You" : $"The {actor.Name.ToLower()}";
             string targetName = (target is Player) ? "you" : $"the {target.Name.ToLower()}";
 
-            if (damage == 0)
+            if (CombatService.AttackSucceeded(actor, target))
             {
-                ReportResult($"{actorName} missed {targetName}.");
-            } else {
+                int damage = DiceService.Instance.Roll(_damageDice).Value;
+
                 ReportResult($"{actorName} hit {targetName} for {damage} point{(damage > 1 ? "s" : "")}.");
+
                 target.TakeDamage(damage);
+            } else {
+                ReportResult($"{actorName} missed {targetName}.");
             }
         }
     }

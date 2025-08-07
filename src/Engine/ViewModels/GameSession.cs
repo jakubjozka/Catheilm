@@ -10,6 +10,8 @@ using Engine.EventArgs;
 using System.Runtime.ExceptionServices;
 using Engine.Services;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using System.IO;
 
 namespace Engine.ViewModels
 {
@@ -17,13 +19,23 @@ namespace Engine.ViewModels
     {
         private readonly MessageBroker _messageBroker = MessageBroker.GetInstance();
 
+        private GameDetails _gameDetails;
         private Battle _currentBattle;
         private Player _currentPlayer;
         private Location _currentLocation;
         private Monster _currentMonster;
         private Trader _currentTrader;
 
-        public string Version { get; } = "0.1.000";
+        [JsonIgnore]
+        public GameDetails GameDetails
+        {
+            get { return _gameDetails; }
+            set
+            {
+                _gameDetails = value;
+                OnPropertyChanged();
+            }
+        }
         [JsonIgnore]
         public World CurrentWorld { get; }
 
@@ -130,24 +142,10 @@ namespace Engine.ViewModels
         [JsonIgnore]
         public bool HasTrader => CurrentTrader != null;
 
-        public GameSession()
-        {
-            CurrentWorld = WorldFactory.CreateWorld();
-            int dexterity = DiceService.Instance.Roll(6, 3).Value;
-            CurrentPlayer = new Player("Kuba", "Necromancer", 0, 10, 10, dexterity, 1000000);
-            if (!CurrentPlayer.Weapons.Any())
-            {
-                CurrentPlayer.AddItemToInventory(ItemFactory.CreateGameItem(1001));
-            }
-            CurrentPlayer.AddItemToInventory(ItemFactory.CreateGameItem(2001));
-            CurrentPlayer.LearnRecipe(RecipeFactory.RecipeByID(1));
-            CurrentPlayer.AddItemToInventory(ItemFactory.CreateGameItem(3001));
-            CurrentPlayer.AddItemToInventory(ItemFactory.CreateGameItem(3002));
-            CurrentPlayer.AddItemToInventory(ItemFactory.CreateGameItem(3003));
-            CurrentLocation = CurrentWorld.LocationAt(0, 0);
-        }
         public GameSession(Player player, int xCoordinate, int yCoordinate)
         {
+            PopulateGameDetails();
+
             CurrentWorld = WorldFactory.CreateWorld();
             CurrentPlayer = player;
             CurrentLocation = CurrentWorld.LocationAt(xCoordinate, yCoordinate);
@@ -175,6 +173,11 @@ namespace Engine.ViewModels
         {
             if (HasLocationToSouth)
                 CurrentLocation = CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1);
+        }
+
+        private void PopulateGameDetails()
+        {
+            GameDetails = GameDetailsService.ReadGameDetails();
         }
 
         private void CompleteQuestsAtLocation()

@@ -7,18 +7,7 @@ namespace Engine.Models
 {
     public class Player : LivingEntity
     {
-        private string _characterClass;
         private int _experiencePoints;
-
-        public string CharacterClass 
-        { 
-            get { return _characterClass; } 
-            set
-            {
-                _characterClass = value;
-                OnPropertyChanged();
-            }
-        }
 
         public int ExperiencePoints
         {
@@ -31,21 +20,17 @@ namespace Engine.Models
             }
         }
 
-        public ObservableCollection<QuestStatus> Quests { get; }
+        public ObservableCollection<QuestStatus> Quests { get; } = new ObservableCollection<QuestStatus>();
 
-        public ObservableCollection<Recipe> Recipes { get; }
+        public ObservableCollection<Recipe> Recipes { get; } = new ObservableCollection<Recipe>();
 
         public event EventHandler OnLeveledUp;
 
-        public Player(string name, string characterClass, int experiencePoints,
-                      int maximumHitPoints, int currentHitPoints, int dexterity, int gold) :
-            base(name, maximumHitPoints, currentHitPoints, dexterity, gold)
+        public Player(string name, int experiencePoints,
+                      int maximumHitPoints, int currentHitPoints, IEnumerable<PlayerAttribute> attributes, int gold) :
+            base(name, maximumHitPoints, currentHitPoints, attributes, gold)
         {
-            CharacterClass = characterClass;
             ExperiencePoints = experiencePoints;
-
-            Quests = new ObservableCollection<QuestStatus>();
-            Recipes = new ObservableCollection<Recipe>();
         }
 
         public void AddExperiencePoints(int experiencePoints)

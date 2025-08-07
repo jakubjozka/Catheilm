@@ -20,11 +20,12 @@ namespace WPFUI
 
         private readonly MessageBroker _messageBroker = MessageBroker.GetInstance();
         private GameSession _gameSession;
-        public MainWindow()
+
+        public MainWindow(Player player, int xLocation = 0, int yLocation = 0)
         {
             InitializeComponent();
-            
-            SetActiveGameSessionTo(new GameSession());
+
+            SetActiveGameSessionTo(new GameSession(player, xLocation, yLocation));
         }
         private void OnClick_MoveNorth(object sender, RoutedEventArgs e)
         {
@@ -85,21 +86,9 @@ namespace WPFUI
 
         private void StartNewGame_OnClick(object sender, RoutedEventArgs e)
         {
-            SetActiveGameSessionTo(new GameSession());
-        }
-
-        private void LoadGame_OnClick(object sender, RoutedEventArgs e)
-        {
-            OpenFileDialog openFileDialog = new OpenFileDialog
-                    {
-                        InitialDirectory = AppDomain.CurrentDomain.BaseDirectory,
-                        Filter = $"Saved games (*.{SAVE_GAME_FILE_EXTENSION})|*.{SAVE_GAME_FILE_EXTENSION}"
-                    };
-
-            if (openFileDialog.ShowDialog() == true)
-            {
-                SetActiveGameSessionTo(SaveGameService.LoadLastSaveOrCreateNew(openFileDialog.FileName));
-            }
+            Startup startup = new Startup();
+            startup.Show();
+            Close();
         }
 
         private void SaveGame_OnClick(object sender, RoutedEventArgs e)

@@ -1,26 +1,25 @@
-# Zápočtový program: *název vašeho programu*
+# Zápočtový program: Catheilm
 
-*Tento soubor slouží jako šablona. Vhodně ho upravte podle vašeho projektu. Text psaný kurzívou obsahuje instrukce pro vás – před odevzdáním je prosím odstraňte nebo nahraďte vlastním textem.*
+## Specification
 
-## Specifikace
+Catheilm is a fantasy RPG game built as a WPF application using the MVVM architecture. It includes systems for world exploration, turn-based combat, inventory management, crafting, quest tracking, trading, and saving/loading game progress.
 
-*Sem napište stručnou specifikaci vašeho programu – co váš program má dělat (podobně jako jste mi psali do mailu). Stačí zhruba 1–2 odstavce.*
+The player can create a character by choosing a race and rolling for attributes, move between locations, fight monsters, collect and equip items, craft new items, trade with NPCs, complete quests, gain experience, and level up.
 
-## *Doporučená struktura projektu*
+## Installation
 
-*Je vhodné v repozitáři oddělit zdrojové kódy vašeho programu od dokumentace (a případně testů, pokud je máte). Pro zdrojové kódy tedy vytvořte složku, v C# se nejčastěji pojmenovává podle jména projektu. Například pokud by se váš program jmenoval JMENO_PROJEKTU, tak budete mít složku `JMENO_PROJEKTU` a v ní `JMENO_PROJEKTU.csproj` a `Program.cs` a případně další `.cs` soubory.*
+1. Install **Visual Studio** with the **.NET Desktop Development** workload.
+2. Download or copy the `/src/` folder to your computer.
+3. Open the solution file (`.sln`) inside the `/src/` folder in Visual Studio.
+4. Restore the required NuGet packages:
+   - `Newtonsoft.Json`
+   - `D20Tek.Common.Net47`
+   - `D20Tek.DiceNotation.Net47`
+5. Build and run the project.
 
-*Pro dokumentaci je připravena složka `docs`, její obsah vhodně upravte.*
+> **Note:** Restoring the above packages will also automatically install any additional dependencies required by the project.
 
-## Instalace a spuštění
-
-*Pokud je váš program v C#, stačí upravit JMENO_PROJEKTU níže a případně doplnit další informace ke spuštění (jestli má nějaké parametry, vstupní soubory, ...). Pokud je parametrů hodně nebo je potřeba nějaký speciální formát vstupních souborů, nechte tuto sekci jen stručnou a podrobněji to popište v uživatelské dokumentaci (a sem dejte odkaz). Pokud je program v jiném programovacím jazyce nebo pro spuštění vyžaduje instalaci nějakých knihoven či nástrojů, tuto sekci vhodně upravte, abych byl při kontrole schopen nainstalovat si vše potřebné a program spustit.*
-
-Pro spuštění přejděte do složky `JMENO_PROJEKTU` a spusťte příkaz `dotnet run`.
-
-## Dokumentace
-
-*Tady bude rozcestník k dokumentaci k vašemu programu. Pokud je to potřeba, upravte odkazy na soubory s dokumentací. Pokud dokumentaci nepíšete v Markdownu, uveďte zde, kde ji najdu (např. odkaz na PDF soubor).*
+## Documentation
 
 * [Uživatelská dokumentace](docs/user.md)
 * [Ukázky použití](docs/examples.md)

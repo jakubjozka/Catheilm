@@ -22,5 +22,4 @@ The player can create a character by choosing a race and rolling for attributes,
 ## Documentation
 
 * [Uživatelská dokumentace](docs/user.md)
-* [Ukázky použití](docs/examples.md)
 * [Programátorská dokumentace](docs/programmer.md)

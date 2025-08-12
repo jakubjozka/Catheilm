@@ -1,5 +1,8 @@
 # User documentation
 
+## What is Catheim?
+The game Catheilm is a fantasy RPG, where players engage in turn-based combat against monsters, manage an inventory of weapons and consumables, complete quests, craft items using recipes, and trade with NPCs. The game tracks experience, levels, and progress, allowing players to save and load their game at any time. All gameplay is controlled through a simple mouse or touchpad interface.
+
 ## Installation
 
 1. Install **Visual Studio** with the **.NET Desktop Development** workload.

@@ -1,4 +1,4 @@
-# Zápočtový program: Catheilm
+# Program Name: Catheilm
 
 ## Specification
 
@@ -21,5 +21,5 @@ The player can create a character by choosing a race and rolling for attributes,
 
 ## Documentation
 
-* [Uživatelská dokumentace](docs/user.md)
-* [Programátorská dokumentace](docs/programmer.md)
+* [User Documentation](docs/user.md)
+* [Programmer Documentation](docs/programmer.md)

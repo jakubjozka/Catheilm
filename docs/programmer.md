@@ -33,7 +33,7 @@ Load game data from XML and create model instances.
 - **WorldFactory**: Reads `Locations.xml` and creates the game world, adding monsters, quests, and traders to locations.  
 
 ### **GameData**  
-XML and JSON files defining game content like items, monsters, locations, quests, recipes, traders, races, and game metadata.  
+XML and JSON files defining game content, which are items, monsters, locations, quests, recipes, traders, races, and game metadata.  
 
 ### **Images**  
 PNG assets for locations and monsters.  

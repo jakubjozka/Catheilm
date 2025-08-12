@@ -14,6 +14,7 @@
 > **Note:** Restoring the above packages will also automatically install any additional dependencies required by the project.
 
 ## Gameplay Guide
+The entire game can be played using only the mouse or a touchpad, as all interactions are handled through buttons and selection boxes.
 
 When the player launches the game, the startup screen appears with three options:
 - **Start New Game** – Opens the character creation screen.

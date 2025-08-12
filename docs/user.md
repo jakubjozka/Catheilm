@@ -16,6 +16,7 @@
 ## Gameplay Guide
 The entire game can be played using only the mouse or a touchpad, as all interactions are handled through buttons and selection boxes.
 
+### Startup Screen
 When the player launches the game, the startup screen appears with three options:
 - **Start New Game** – Opens the character creation screen.
 - **Load Save Game** – Opens the save file directory. Selecting a save file loads the game from the point where it was last saved.

@@ -11,8 +11,8 @@ The Engine project contains the core game logic and data definitions.
 ### **Actions**  
 Defines actions that can be performed in combat.  
 
-- **BaseAction** *(abstract)*: Stores the item in use, handles events for action results, and provides a `ReportResult` method.  
-- **IAction** *(interface)*: Requires an `Execute()` method and `OnActionPerformed` event.  
+- **BaseAction**: Stores the item in use, handles events for action results, and provides a `ReportResult` method.  
+- **IAction**: Requires an `Execute()` method and `OnActionPerformed` event.  
 - **AttackWithWeapon**: Inherits from `BaseAction` and `IAction`. Executes an attack action, reporting attacker, target, and damage dealt.  
 - **Heal**: Inherits from `BaseAction` and `IAction`. Executes a healing action, reporting healer, target, and amount healed.  
 

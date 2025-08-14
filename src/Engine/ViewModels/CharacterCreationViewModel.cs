@@ -67,19 +67,20 @@ namespace Engine.ViewModels
 
         public Player GetPlayer()
         {
-            Player player =  new Player("Name", 
+            Player player =  new Player(Name, 
                               0, 
                               10, 
                               10, 
                               PlayerAttributes, 
-                              10000);
+                              10);
 
             player.AddItemToInventory(ItemFactory.CreateGameItem(1001));
+            player.AddItemToInventory(ItemFactory.CreateGameItem(1005));
             player.AddItemToInventory(ItemFactory.CreateGameItem(2001));
             player.LearnRecipe(RecipeFactory.RecipeByID(1));
-            player.AddItemToInventory(ItemFactory.CreateGameItem(3001));
-            player.AddItemToInventory(ItemFactory.CreateGameItem(3002));
-            player.AddItemToInventory(ItemFactory.CreateGameItem(3003));
+            player.LearnRecipe(RecipeFactory.RecipeByID(2));
+            player.LearnRecipe(RecipeFactory.RecipeByID(3));
+            player.LearnRecipe(RecipeFactory.RecipeByID(4));
 
             return player;
         }

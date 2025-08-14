@@ -48,7 +48,8 @@ namespace WPFUI
                 GameSession gameSession = SaveGameService.LoadLastSaveOrCreateNew(openFileDialog.FileName);
 
                 MainWindow mainWindow = new MainWindow(
-                                            gameSession.CurrentPlayer, 
+                                            gameSession.CurrentPlayer,
+                                            false,
                                             gameSession.CurrentLocation.XCoordinate, 
                                             gameSession.CurrentLocation.YCoordinate);
 

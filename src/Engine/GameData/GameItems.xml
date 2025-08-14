@@ -2,7 +2,8 @@
 <GameItems>
 	<Weapons>
 		<Weapon ID ="1001" Name="Weak branch" Price="1" DamageDice="1d2"/>
-		<Weapon ID ="1002" Name="Legendary sword" Price="20" DamageDice="1d100"/>
+		<Weapon ID ="1002" Name="Stone sword" Price="5" DamageDice="2d5"/>
+		<Weapon ID ="1005" Name="Legendary sword" Price="20" DamageDice="1d100"/>
 		<Weapon ID ="1501" Name="Snake fangs" Price="0" DamageDice="1d2"/>
 		<Weapon ID ="1502" Name="Rat claws" Price="0" DamageDice="1d2"/>
 		<Weapon ID ="1503" Name="Spider fangs" Price="0" DamageDice="1d4"/>
@@ -13,12 +14,19 @@
 		<HealingItem ID="2003" Name="Greater health potion" Price="10" HitPointsToHeal="7"/>
 	</HealingItems>
 	<MiscellaneousItems>
+		<!-- Potion making -->
 		<MiscellaneousItem ID="3001" Name="Red Herb" Price="1"/>
 		<MiscellaneousItem ID="3002" Name="Clear Water" Price="1"/>
 		<MiscellaneousItem ID="3003" Name="Ground Bone Dust" Price="2"/>
-		<MiscellaneousItem ID="3004" Name="SunBlossom Petal" Price="1"/>
-		<MiscellaneousItem ID="3005" Name="Lesser Blood Essence" Price="3"/>
-		<MiscellaneousItem ID="3006" Name="Greater Blood Essence" Price="5"/>
+		<MiscellaneousItem ID="3004" Name="SunBlossom Petal" Price="5"/>
+		<MiscellaneousItem ID="3005" Name="Lesser Blood Essence" Price="2"/>
+		<MiscellaneousItem ID="3006" Name="Greater Blood Essence" Price="4"/>
+		
+		<!-- Sword making -->
+		<MiscellaneousItem ID="4001" Name="Handle" Price="20"/>
+		<MiscellaneousItem ID="4002" Name="Sturdy stones" Price="15"/>
+		
+		<!-- Loot drops -->
 		<MiscellaneousItem ID="9001" Name="Snake skin" Price="2"/>
 		<MiscellaneousItem ID="9002" Name="Snake eye" Price="5"/>
 		<MiscellaneousItem ID="9003" Name="Rat tail" Price="1"/>

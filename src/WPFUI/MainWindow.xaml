@@ -6,7 +6,8 @@
         xmlns:viewModels="clr-namespace:Engine.ViewModels;assembly=Engine"
         d:DataContext="{d:DesignInstance viewModels:GameSession}"
         mc:Ignorable="d"
-        FontSize="11pt"
+        FontFamily="pack://application:,,,/Fonts/#Pixel Game"
+        FontSize="14pt"
         Title="{Binding GameDetails.Name}"
         Height="768" Width="1024"
         Closing="MainWindow_OnClosing">
@@ -28,7 +29,7 @@
         </Grid.ColumnDefinitions>
 
         <!-- Menu -->
-        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" FontSize="11pt" Background="AliceBlue">
+        <Menu Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Background="AliceBlue">
             <MenuItem Header="File">
                 <MenuItem Header="Start New Game"
                           Click="StartNewGame_OnClick"/>
@@ -48,7 +49,7 @@
         </Menu>
 
             <!-- Player stats -->
-        <Grid Grid.Row="1" Grid.Column="0" Background="Aquamarine">
+        <Grid Grid.Row="1" Grid.Column="0" Background="#93FFE8">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="Auto"/>
@@ -76,7 +77,7 @@
             <Label Grid.Row="4" Grid.Column="1" Content="{Binding CurrentPlayer.Level}"/>
 
             <ListBox Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
-                     Background="Aquamarine" BorderThickness="0"
+                     Background="#93FFE8" BorderThickness="0"
                      Grid.IsSharedSizeScope="True" ItemsSource="{Binding CurrentPlayer.Attributes}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>

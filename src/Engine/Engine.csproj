@@ -138,24 +138,25 @@
     <Content Include="GameData\GameDetails.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <None Include="GameData\GameItems.xml">
+    <Content Include="GameData\GameItems.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="GameData\Locations.xml">
+    </Content>
+    <Content Include="GameData\Locations.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="GameData\Monsters.xml">
+    </Content>
+    <Content Include="GameData\Monsters.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="GameData\Quests.xml">
+    </Content>
+    <Content Include="GameData\Quests.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="GameData\Recipes.xml">
+    </Content>
+    <Content Include="GameData\Recipes.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Include="GameData\Traders.xml">
+    </Content>
+    <Content Include="GameData\Traders.xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
+    </Content>
+    <Resource Include="Images\Fonts\Pixel Game.otf" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +199,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets" Condition="Exists('..\packages\System.ValueTuple.4.6.1\build\net471\System.ValueTuple.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

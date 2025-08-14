@@ -21,11 +21,11 @@ namespace WPFUI
         private readonly MessageBroker _messageBroker = MessageBroker.GetInstance();
         private GameSession _gameSession;
 
-        public MainWindow(Player player, int xLocation = 0, int yLocation = 0)
+        public MainWindow(Player player, bool IsNew, int xLocation = 0, int yLocation = -1)
         {
             InitializeComponent();
 
-            SetActiveGameSessionTo(new GameSession(player, xLocation, yLocation));
+            SetActiveGameSessionTo(new GameSession(player, xLocation, yLocation), IsNew);
         }
         private void OnClick_MoveNorth(object sender, RoutedEventArgs e)
         {
@@ -72,7 +72,7 @@ namespace WPFUI
             _gameSession.CraftItemUsing(recipe);
         }
 
-        private void SetActiveGameSessionTo(GameSession gameSession)
+        private void SetActiveGameSessionTo(GameSession gameSession, bool IsNew)
         {
             _messageBroker.OnMessageRaised -= OnGameMessageRaised;
 
@@ -82,6 +82,16 @@ namespace WPFUI
             GameMessages.Document.Blocks.Clear();
 
             _messageBroker.OnMessageRaised += OnGameMessageRaised;
+
+            if (_gameSession.CurrentLocation == _gameSession.CurrentWorld.LocationAt(0, -1) && IsNew)
+            {
+                _messageBroker.RaiseMessage("Welcome to the town called Catheilm, your mission is to defeat the evil and help the citizens with their needs.");
+                _messageBroker.RaiseMessage("You can move around with buttons in the right bottom corner.");
+                _messageBroker.RaiseMessage("You can select a weapon/consumable in the bottom.");
+                _messageBroker.RaiseMessage("You can trade in certain locations and craft in the recipe section.");
+                _messageBroker.RaiseMessage("You can start a new game, save your current game or exit by clicking on the file button");
+                _messageBroker.RaiseMessage("Have fun playing the game!");
+            }
         }
 
         private void StartNewGame_OnClick(object sender, RoutedEventArgs e)

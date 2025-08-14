@@ -47,7 +47,12 @@ namespace Engine.Factories
 
             foreach(XmlNode node in nodes)
             {
-                var attributes = s_gameDetails.PlayerAttributes;
+                var attributes = new List<PlayerAttribute>();
+                foreach (var attr in s_gameDetails.PlayerAttributes)
+                {
+                    attributes.Add(new PlayerAttribute(attr.Key, attr.DisplayName, attr.DiceNotation, attr.BaseValue));
+                }
+
                 attributes.First(a => a.Key.Equals("DEX")).BaseValue = Convert.ToInt32(node.SelectSingleNode("./Dexterity").InnerText);
                 attributes.First(a => a.Key.Equals("DEX")).ModifiedValue = Convert.ToInt32(node.SelectSingleNode("./Dexterity").InnerText);
 

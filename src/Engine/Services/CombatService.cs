@@ -35,7 +35,18 @@ namespace Engine.Services
             int randomOffset = DiceService.Instance.Roll(20).Value - 10;
             decimal totalOffset = dexterityOffset + randomOffset;
 
-            return DiceService.Instance.Roll(100).Value <= 50 + totalOffset;
+            decimal finalChance = 50 + totalOffset;
+            int roll = DiceService.Instance.Roll(100).Value;
+            bool hit = roll <= finalChance;
+
+            // DEBUG - remove after testing
+            System.Diagnostics.Debug.WriteLine($"Combat: {attacker.Name}(DEX:{attacker.GetAttribute("DEX").ModifiedValue}) vs {target.Name}(DEX:{target.GetAttribute("DEX").ModifiedValue})");
+            System.Diagnostics.Debug.WriteLine($"DEX²: {playerDexterity} vs {opponentDexterity}, Offset: {dexterityOffset}");
+            System.Diagnostics.Debug.WriteLine($"Random: {randomOffset}, Total: {totalOffset}, Chance: {finalChance}%");
+            System.Diagnostics.Debug.WriteLine($"Roll: {roll}, Hit: {hit}");
+            System.Diagnostics.Debug.WriteLine("---");
+
+            return hit;
         }
     }
 }

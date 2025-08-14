@@ -122,19 +122,31 @@ namespace Engine.ViewModels
 
         [JsonIgnore]
         public bool HasLocationToNorth =>
-                CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1) != null;
+                CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1) != null &&
+                IsLocationUnlocked(CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate + 1));
 
         [JsonIgnore]
         public bool HasLocationToEast =>
-                CurrentWorld.LocationAt(CurrentLocation.XCoordinate + 1, CurrentLocation.YCoordinate) != null;
+                CurrentWorld.LocationAt(CurrentLocation.XCoordinate + 1, CurrentLocation.YCoordinate) != null &&
+                IsLocationUnlocked(CurrentWorld.LocationAt(CurrentLocation.XCoordinate + 1, CurrentLocation.YCoordinate));
 
         [JsonIgnore]
         public bool HasLocationToSouth =>
-                CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1) != null;
+                CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1) != null &&
+                IsLocationUnlocked(CurrentWorld.LocationAt(CurrentLocation.XCoordinate, CurrentLocation.YCoordinate - 1));
 
         [JsonIgnore]
         public bool HasLocationToWest =>
-                CurrentWorld.LocationAt(CurrentLocation.XCoordinate - 1, CurrentLocation.YCoordinate) != null;
+                CurrentWorld.LocationAt(CurrentLocation.XCoordinate - 1, CurrentLocation.YCoordinate) != null &&
+                IsLocationUnlocked(CurrentWorld.LocationAt(CurrentLocation.XCoordinate - 1, CurrentLocation.YCoordinate));
+
+        private bool IsLocationUnlocked(Location location)
+        {
+            if (location == null || location.LockedUntilQuestID == null)
+                return true;
+
+            return CurrentPlayer.Quests.Any(q => q.PlayerQuest.ID == location.LockedUntilQuestID && q.IsCompleted);
+        }
 
         [JsonIgnore]
         public bool HasMonster => CurrentMonster != null;
@@ -210,6 +222,11 @@ namespace Engine.ViewModels
                         }
 
                         questToComplete.IsCompleted = true;
+
+                        OnPropertyChanged(nameof(HasLocationToNorth));
+                        OnPropertyChanged(nameof(HasLocationToEast));
+                        OnPropertyChanged(nameof(HasLocationToSouth));
+                        OnPropertyChanged(nameof(HasLocationToWest));
                     }
                 }
             }

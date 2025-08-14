@@ -39,11 +39,19 @@ namespace Engine.Factories
             }
             foreach (XmlNode node in nodes)
             {
+
+                int? lockedUntilQuestID = null;
+                if (node.Attributes["LockedUntilQuestID"] != null)
+                {
+                    lockedUntilQuestID = node.AttributesAsInt("LockedUntilQuestID");
+                }
                 Location location = new Location(node.AttributesAsInt("X"),
                                                   node.AttributesAsInt("Y"),
                                                   node.AttributesAsString("Name"),
                                                   node.SelectSingleNode("./Description")?.InnerText ?? "",
-                                                  $".{rootImagePath}{node.AttributesAsString("ImageName")}");
+                                                  $".{rootImagePath}{node.AttributesAsString("ImageName")}",
+                                                  null,
+                                                  lockedUntilQuestID);
 
                 AddMonsters(location, node.SelectNodes("./Monsters/Monster"));
                 AddQuests(location, node.SelectNodes("./Quests/Quest"));

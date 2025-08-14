@@ -7,9 +7,10 @@
         xmlns:viewModels="clr-namespace:Engine.Models;assembly=Engine"
         d:DataContext="{d:DesignInstance viewModels:GameDetails}"
         mc:Ignorable="d"
-        FontSize="11pt"
+        FontFamily="pack://application:,,,/Fonts/#Pixel Game"
+        FontSize="14pt"
         Title="{Binding Title}" Height="400" Width="400">
-    <Grid Margin="10, 10, 10, 10">
+    <Grid Margin="10, 100, 10, 10">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>

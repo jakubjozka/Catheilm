@@ -33,8 +33,7 @@ namespace Engine.Factories
                 foreach (XmlNode childNode in node.SelectNodes("./InventoryItems/Item"))
                 {
                     int quantity = childNode.AttributesAsInt("Quantity");
-                    // Create a new GameItem object for each item we add.
-                    // This is to allow for unique items, like swords with enchantments.
+                    
                     for (int i = 0; i < quantity; i++)
                     {
                         trader.AddItemToInventory(ItemFactory.CreateGameItem(childNode.AttributesAsInt("ID")));

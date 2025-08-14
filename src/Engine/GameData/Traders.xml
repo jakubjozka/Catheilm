@@ -3,19 +3,17 @@
 	<Trader ID="1">
 		<Name><![CDATA[Larry]]></Name>
 		<InventoryItems>
-			<Item ID="1001" Quantity="1"/>
+			<Item ID="4001" Quantity="99"/>
+			<Item ID="4002" Quantity="99"/>
 		</InventoryItems>
 	</Trader>
 	<Trader ID="2">
-		<Name><![CDATA[Farmer Ted]]></Name>
-		<InventoryItems>
-			<Item ID="1001" Quantity="1"/>
-		</InventoryItems>
-	</Trader>
-	<Trader ID="3">
 		<Name><![CDATA[Pete the Herbalist]]></Name>
 		<InventoryItems>
-			<Item ID="1001" Quantity="1"/>
+			<Item ID="3002" Quantity="99"/>
+			<Item ID="3001" Quantity="99"/>
+			<Item ID="3003" Quantity="99"/>
+			<Item ID="3004" Quantity="99"/>
 		</InventoryItems>
 	</Trader>
 </Traders>

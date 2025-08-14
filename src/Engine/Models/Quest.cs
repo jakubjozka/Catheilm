@@ -35,7 +35,7 @@ namespace Engine.Models
             "Rewards\r\n" +
             "=========================================" + Environment.NewLine +
             $"{RewardExperiencePoints} experience points" + Environment.NewLine +
-            "{RewardGold} gold" + Environment.NewLine +
+            $"{RewardGold} gold" + Environment.NewLine +
             string.Join(Environment.NewLine, RewardItems.Select(i => i.QuantityDescription));
 
         public Quest(int iD, string name, string description, List<ItemQuantity> itemsToComplete,

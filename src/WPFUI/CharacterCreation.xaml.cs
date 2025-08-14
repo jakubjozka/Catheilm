@@ -34,7 +34,7 @@ namespace WPFUI
 
         private void UseThisPlayer_OnClick(object sender, RoutedEventArgs e)
         {
-            MainWindow mainWindow = new MainWindow(VM.GetPlayer());
+            MainWindow mainWindow = new MainWindow(VM.GetPlayer(), true);
             mainWindow.Show();
             Close();
         }

@@ -26,8 +26,10 @@ namespace Engine.Models
         public List<MonsterEncounter> MonstersHere { get; } = new List<MonsterEncounter>();
         [JsonIgnore]
         public Trader TraderHere { get; set; }
+        [JsonIgnore]
+        public int? LockedUntilQuestID { get; set; }
 
-        public Location(int xCoordinate, int yCoordinate, string name, string description, string imageName, Trader traderHere = null)
+        public Location(int xCoordinate, int yCoordinate, string name, string description, string imageName, Trader traderHere = null, int? lockedUntilQuestID = null)
         {
             XCoordinate = xCoordinate;
             YCoordinate = yCoordinate;
@@ -35,6 +37,7 @@ namespace Engine.Models
             Description = description;
             ImageName = imageName;
             TraderHere = traderHere;
+            LockedUntilQuestID = lockedUntilQuestID;
         }
 
         public void AddMonster(int monsterID, int chanceOfEncountering)

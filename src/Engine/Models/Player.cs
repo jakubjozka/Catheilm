@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using Engine.Services;
+using Engine.Shared;
 
 namespace Engine.Models
 {
@@ -54,12 +56,25 @@ namespace Engine.Models
 
             if (Level != originalLevel)
             {
-                MaximumHitPoints += Level * 10;
+                MaximumHitPoints += Attributes.FirstOrDefault(p => p.Key == "CON").ModifiedValue;
 
                 CompletelyHeal();
 
+                LevelUpRandomAttribute();
+
                 OnLeveledUp?.Invoke(this, System.EventArgs.Empty);
             }
+        }
+
+        public void LevelUpRandomAttribute()
+        {
+            var availableAttributes = new[] { "CON", "DEX" };
+
+            string randomAttribute = availableAttributes[DiceService.Instance.Roll(availableAttributes.Length).Value - 1];
+
+            PlayerAttribute attributeToLevelUp = Attributes.FirstOrDefault(a => a.Key == randomAttribute);
+
+            attributeToLevelUp.ModifiedValue += 1;
         }
     }
 }

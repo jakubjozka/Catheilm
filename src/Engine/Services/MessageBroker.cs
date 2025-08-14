@@ -20,7 +20,7 @@ namespace Engine.Services
             return _messageBroker;
         }
 
-        internal void RaiseMessage(string message)
+        public void RaiseMessage(string message)
         {
             OnMessageRaised?.Invoke(this, new GameMessageEventArgs(message));
         }

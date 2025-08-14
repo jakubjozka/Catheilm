@@ -35,8 +35,8 @@
     ],
     "Races": [
         {
-            "Key": "HUMAN",
-            "DisplayName": "Human",
+            "Key": "CAT",
+            "DisplayName": "Cat",
             "PlayerAttributeModifiers": [
                 {
                     "AttributedKey": "CON",
@@ -60,7 +60,7 @@
             "PlayerAttributeModifiers": [
                 {
                     "AttributedKey": "WIS",
-                    "Modifier": "-1"
+                    "Modifier": "1"
                 }
             ]
         }

@@ -8,7 +8,9 @@
 	</Location>
 	<Location X="-1" Y="-1" Name="Farmer's House" ImageName="Farmhouse.png">
 		<Description><![CDATA[This is the house of your neighbor, Farmer Ted.]]></Description>
-		<Trader ID="2"/>
+		<Quests>
+			<Quest ID="1"/>
+		</Quests>
 	</Location>
 	<Location X="0" Y="-1" Name="Home" ImageName="Home.png">
 		<Description><![CDATA[This is your home.]]></Description>
@@ -20,8 +22,11 @@
 	<Location X="0" Y="0" Name="Town Square" ImageName="TownSquare.png">
 		<Description><![CDATA[You see a fountain here.]]></Description>
 	</Location>
-	<Location X="1" Y="0" Name="Town Gate" ImageName="TownGate.png">
+	<Location X="1" Y="0" Name="Town Gate" ImageName="TownGate.png" LockedUntilQuestID="2">
 		<Description><![CDATA[There is a gate here, protecting the town from giant spiders.]]></Description>
+		<Quests>
+			<Quest ID="3"/>
+		</Quests>
 	</Location>
 	<Location X="2" Y="0" Name="Spider Forest" ImageName="SpiderForest.png">
 		<Description><![CDATA[The trees in this forest are covered with spider webs.]]></Description>
@@ -29,12 +34,12 @@
 			<Monster ID="3" Percent="100"/>
 		</Monsters>
 	</Location>
-	<Location X="0" Y="1" Name="Herbalist's Hut" ImageName="HerbalistsHut.png">
+	<Location X="0" Y="1" Name="Herbalist's Hut" ImageName="HerbalistsHut.png" LockedUntilQuestID="1">
 		<Description><![CDATA[You see a small hut, with plants drying from the roof.]]></Description>
+		<Trader ID="2"/>
 		<Quests>
-			<Quest ID="1"/>
+			<Quest ID="2"/>
 		</Quests>
-		<Trader ID="3"/>
 	</Location>
 	<Location X="0" Y="2" Name="Herbalist's Garden" ImageName="HerbalistsGarden.png">
 		<Description><![CDATA[There are many plants here, with snakes hiding behind them.]]></Description>

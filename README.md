@@ -23,3 +23,4 @@ The player can create a character by choosing a race and rolling for attributes,
 
 * [User Documentation](docs/user.md)
 * [Programmer Documentation](docs/programmer.md)
+* [Development Notes](docs/developmentNotes.md)

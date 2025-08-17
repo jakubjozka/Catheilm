@@ -8,6 +8,7 @@ using Newtonsoft.Json;
 
 namespace Engine.Models
 {
+    // An abstract class that Monster, Player, and other living entities can inherit from to reduce code duplication
     public abstract class LivingEntity : BaseNotificationClass
     {
         private string _name;

@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <Quests>
-	<Quest ID="1" RewardExperiencePoints="25" RewardGold="70">
+	<Quest ID="1" RewardExperiencePoints="100" RewardGold="70">
 		<Name><![CDATA[Clear the farmer's field]]></Name>
 		<Description><![CDATA[Defeat the rats in the Farmer's Field]]></Description>
 		<ItemsToComplete>
@@ -9,7 +9,7 @@
 		<RewardItems>
 		</RewardItems>
 	</Quest>
-	<Quest ID="2" RewardExperiencePoints="25" RewardGold="150">
+	<Quest ID="2" RewardExperiencePoints="200" RewardGold="150">
 		<Name><![CDATA[Clear the herb garden]]></Name>
 		<Description><![CDATA[Defeat the snakes in the Herbalist's garden.]]></Description>
 		<ItemsToComplete>
@@ -18,14 +18,21 @@
 		<RewardItems>
 		</RewardItems>
 	</Quest>
-	<Quest ID="3" RewardExperiencePoints="25" RewardGold="300">
+	<Quest ID="3" RewardExperiencePoints="400" RewardGold="300">
 		<Name><![CDATA[Clear the forest]]></Name>
 		<Description><![CDATA[Defeat spiders in the Spider Forest]]></Description>
 		<ItemsToComplete>
 			<Item ID="9005" Quantity="5"/>
 		</ItemsToComplete>
+	</Quest>
+	<Quest ID="4" RewardExperiencePoints="1000" RewardGold="500">
+		<Name><![CDATA[Defeat the final boss]]></Name>
+		<Description><![CDATA[Defeat the final boss at the Volcano]]></Description>
+		<ItemsToComplete>
+			<Item ID="9007" Quantity="1"/>
+		</ItemsToComplete>
 		<RewardItems>
-			<Item ID="1002" Quantity="1"/>
+			<Item ID="1005" Quantity="1"/>
 		</RewardItems>
 	</Quest>
 </Quests>

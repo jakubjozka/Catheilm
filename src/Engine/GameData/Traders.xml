@@ -3,8 +3,12 @@
 	<Trader ID="1">
 		<Name><![CDATA[Larry]]></Name>
 		<InventoryItems>
-			<Item ID="4001" Quantity="99"/>
-			<Item ID="4002" Quantity="99"/>
+			<Item ID="4001" Quantity="1"/>
+			<Item ID="4002" Quantity="2"/>
+			<Item ID="4003" Quantity="1"/>
+			<Item ID="4004" Quantity="3"/>
+			<Item ID="4005" Quantity="1"/>
+			<Item ID="4006" Quantity="3"/>
 		</InventoryItems>
 	</Trader>
 	<Trader ID="2">

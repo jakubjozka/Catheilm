@@ -45,22 +45,40 @@
             ]
         },
         {
-            "Key": "ELF",
-            "DisplayName": "Elf",
+            "Key": "CATELF",
+            "DisplayName": "Catelf",
             "PlayerAttributeModifiers": [
                 {
-                    "AttributedKey": "CHA",
+                    "AttributedKey": "DEX",
                     "Modifier": "1"
                 }
             ]
         },
         {
-            "Key": "DWARF",
-            "DisplayName": "Dwarf",
+            "Key": "CATWARF",
+            "DisplayName": "Catwarf",
             "PlayerAttributeModifiers": [
                 {
-                    "AttributedKey": "WIS",
-                    "Modifier": "1"
+                    "AttributedKey": "DEX",
+                    "Modifier": "2"
+                },
+                {
+                    "AttributedKey": "CON",
+                    "Modifier": "-1"
+                }
+            ]
+        },
+        {
+            "Key": "CATORC",
+            "DisplayName": "Catorc",
+            "PlayerAttributeModifiers": [
+                {
+                    "AttributedKey": "DEX",
+                    "Modifier": "-1"
+                },
+                {
+                    "AttributedKey": "CON",
+                    "Modifier": "2"
                 }
             ]
         }

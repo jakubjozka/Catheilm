@@ -43,6 +43,7 @@ namespace Engine.ViewModels
             RollNewCharacter();
         }
 
+        // Rerolls all player attributes for the character
         public void RollNewCharacter()
         {
             PlayerAttributes.Clear();
@@ -55,6 +56,7 @@ namespace Engine.ViewModels
             ApplyAttributeModifiers();
         }
 
+        // Applies the race attribute modifiers to the player attributes
         public void ApplyAttributeModifiers()
         {
             foreach (PlayerAttribute playerAttribute in PlayerAttributes)
@@ -75,12 +77,13 @@ namespace Engine.ViewModels
                               10);
 
             player.AddItemToInventory(ItemFactory.CreateGameItem(1001));
-            player.AddItemToInventory(ItemFactory.CreateGameItem(1005));
             player.AddItemToInventory(ItemFactory.CreateGameItem(2001));
             player.LearnRecipe(RecipeFactory.RecipeByID(1));
             player.LearnRecipe(RecipeFactory.RecipeByID(2));
             player.LearnRecipe(RecipeFactory.RecipeByID(3));
             player.LearnRecipe(RecipeFactory.RecipeByID(4));
+            player.LearnRecipe(RecipeFactory.RecipeByID(5));
+            player.LearnRecipe(RecipeFactory.RecipeByID(6));
 
             return player;
         }

@@ -49,6 +49,7 @@ namespace Engine.Models
             }
         }
 
+        // We have to implement IDisposable to not have duplicate text
         public void Dispose()
         {
             _player.OnActionPerformed -= OnCombatantActionPerformed;
@@ -56,6 +57,7 @@ namespace Engine.Models
             _opponent.OnKilled -= OnOpponentKilled;
         }
 
+        // Reports the player has killed the opponent and gives rewards
         private void OnOpponentKilled(object sender, System.EventArgs e)
         {
             _messageBroker.RaiseMessage("");

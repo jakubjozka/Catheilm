@@ -9,6 +9,7 @@ using Newtonsoft.Json.Linq;
 
 namespace Engine.Shared
 {
+    // Parsing methods
     public static class ExtensionMethods
     {
         //XML

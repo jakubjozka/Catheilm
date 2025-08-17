@@ -1,12 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <GameItems>
 	<Weapons>
-		<Weapon ID ="1001" Name="Weak branch" Price="1" DamageDice="1d2"/>
-		<Weapon ID ="1002" Name="Stone sword" Price="5" DamageDice="2d5"/>
-		<Weapon ID ="1005" Name="Legendary sword" Price="20" DamageDice="1d100"/>
-		<Weapon ID ="1501" Name="Snake fangs" Price="0" DamageDice="1d2"/>
-		<Weapon ID ="1502" Name="Rat claws" Price="0" DamageDice="1d2"/>
-		<Weapon ID ="1503" Name="Spider fangs" Price="0" DamageDice="1d4"/>
+		<!-- Player Weapons -->
+		<Weapon ID="1001" Name="Weak branch" Price="1" DamageDice="1d2"/>
+		<Weapon ID="1002" Name="Stone sword" Price="5" DamageDice="1d8"/>
+		<Weapon ID="1003" Name="Iron sword" Price="10" DamageDice="1d12"/>
+		<Weapon ID="1004" Name="Diamond sword" Price="20" DamageDice="1d25"/>
+		
+		<Weapon ID="1005" Name="Legendary sword" Price="100" DamageDice="5d100"/>
+
+		<!-- Monster Weapons -->
+		<Weapon ID="1501" Name="Snake fangs" Price="0" DamageDice="1d12"/>
+		<Weapon ID="1502" Name="Rat claws" Price="0" DamageDice="1d4"/>
+		<Weapon ID="1503" Name="Spider fangs" Price="0" DamageDice="6d3"/>
+		<Weapon ID="1504" Name="Snaderat fangs" Price="0" DamageDice="3d8"/>
 	</Weapons>
 	<HealingItems>
 		<HealingItem ID="2001" Name="Minor health potion" Price="2" HitPointsToHeal="2"/>
@@ -23,8 +30,12 @@
 		<MiscellaneousItem ID="3006" Name="Greater Blood Essence" Price="4"/>
 		
 		<!-- Sword making -->
-		<MiscellaneousItem ID="4001" Name="Handle" Price="20"/>
+		<MiscellaneousItem ID="4001" Name="Wood Handle" Price="20"/>
 		<MiscellaneousItem ID="4002" Name="Sturdy stones" Price="15"/>
+		<MiscellaneousItem ID="4003" Name="Leather Handle" Price="50"/>
+		<MiscellaneousItem ID="4004" Name="Iron piece" Price="30"/>
+		<MiscellaneousItem ID="4005" Name="Crystal Handle" Price="100"/>
+		<MiscellaneousItem ID="4006" Name="Diamond piece" Price="60"/>
 		
 		<!-- Loot drops -->
 		<MiscellaneousItem ID="9001" Name="Snake skin" Price="2"/>
@@ -33,5 +44,6 @@
 		<MiscellaneousItem ID="9004" Name="Rat fur" Price="2"/>
 		<MiscellaneousItem ID="9005" Name="Spider eye" Price="3"/>
 		<MiscellaneousItem ID="9006" Name="Spider silk" Price="2"/>
+		<MiscellaneousItem ID="9007" Name="Snaderat Head" Price="10"/>
 	</MiscellaneousItems>
 </GameItems>

@@ -33,7 +33,8 @@
         <Label Grid.Row="1" Grid.Column="1"
                HorizontalAlignment="Center"
                Content="Trader's Inventory"/>
-
+        
+        <!-- Player Inventory -->
         <DataGrid Grid.Row="2" Grid.Column="0"
                   Margin="10"
                   ItemsSource="{Binding CurrentPlayer.GroupedInventory}"
@@ -68,6 +69,7 @@
             </DataGrid.Columns>
         </DataGrid>
 
+        <!-- Trader Inventory -->
         <DataGrid Grid.Row="2" Grid.Column="1"
                   Margin="10"
                   ItemsSource="{Binding CurrentTrader.GroupedInventory}"

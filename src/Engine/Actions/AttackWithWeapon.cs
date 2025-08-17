@@ -30,6 +30,7 @@ namespace Engine.Actions
             _damageDice = damageDice;
         }
 
+        // Reports the result of the attack and applies damage to the target if the attack succeeds.
         public void Execute(LivingEntity actor, LivingEntity target)
         {
             string actorName = (actor is Player) ? "You" : $"The {actor.Name.ToLower()}";

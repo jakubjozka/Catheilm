@@ -9,6 +9,7 @@ using System.Collections.Generic;
 
 namespace Engine.Services
 {
+    // Service to save and load game sessions from JSON files
     public static class SaveGameService
     {
         public static void Save(GameSession gameSession, string filename)

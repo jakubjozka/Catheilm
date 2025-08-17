@@ -48,24 +48,42 @@ namespace Engine.Models
             }
         }
 
+        /// Calculates the amount of experience required to reach a specified level.
+        private int ExpRequiredForLevel(int level)
+        {
+            const double baseExp = 50;
+            const double growth = 1.05;
+            const double softCap = 20.0;
+            const double damping = 0.1;
+
+            double exp = baseExp * Math.Pow(level, growth) * Math.Pow(1 + (level / softCap), damping);
+            return (int)Math.Round(exp);
+        }
+
         public void SetLevelAndMaximumHitpoints()
         {
             int originalLevel = Level;
 
-            Level = (ExperiencePoints / 100) + 1;
+            int calculatedLevel = 1;
+            int remainingExp = ExperiencePoints;
+            while (remainingExp >= ExpRequiredForLevel(calculatedLevel))
+            {
+                remainingExp -= ExpRequiredForLevel(calculatedLevel);
+                calculatedLevel++;
+            }
+            Level = calculatedLevel;
 
             if (Level != originalLevel)
             {
-                MaximumHitPoints += Attributes.FirstOrDefault(p => p.Key == "CON").ModifiedValue;
+                MaximumHitPoints += 8 + Attributes.FirstOrDefault(p => p.Key == "CON").ModifiedValue/10;
 
                 CompletelyHeal();
-
                 LevelUpRandomAttribute();
-
                 OnLeveledUp?.Invoke(this, System.EventArgs.Empty);
             }
         }
 
+        // As the player doesn't use any other attributes, we can simplify the leveling up process to just CON and DEX.
         public void LevelUpRandomAttribute()
         {
             var availableAttributes = new[] { "CON", "DEX" };

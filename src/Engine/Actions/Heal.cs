@@ -27,6 +27,7 @@ namespace Engine.Actions
             _hitPointsToHeal = hitPointsToHeal;
         }
 
+        // Reports the result of the healing action and applies healing to the target.
         public void Execute(LivingEntity actor, LivingEntity target)
         {
             string actorName = (actor is Player) ? "You" : $"The {actor.Name.ToLower()}";

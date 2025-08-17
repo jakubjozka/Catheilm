@@ -2,7 +2,7 @@
 
 This was one of my biggest projects and I am very happy with how it turned out code-wise, as I mainly wanted to practice what we did in *Programování 2 (NPRG031)* and also tried out things I hadn’t implemented in my previous games, like loading and saving progress and working with game data. 
 One of my future goals is to complete everything I listed in the *“What could be added”* section, and since the UI isn’t looking the best, I also want to try updating it, even though my previous attempts caused so many issues that I had to completely revert to the last version. 
-In contrast to my last game, where the visuals were really pretty but the code was buggy, this time it’s the opposite, I’m proud of the code, but not the visuals.
+In contrast to my last game, where the visuals were really pretty but the code was buggy, this time it’s the opposite, I’m proud of the code, but not the visuals, other than some of the locations and monsters, that I credit my girlfriend for and are really pretty.
 
 ## Progression of work
 

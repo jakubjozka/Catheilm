@@ -15,7 +15,7 @@
 	<Location X="0" Y="-1" Name="Home" ImageName="Home.png">
 		<Description><![CDATA[This is your home.]]></Description>
 	</Location>
-	<Location X="0" Y="-2" Name="Pond" ImageName="Pond.png">
+	<Location X="0" Y="-2" Name="Pond" ImageName="Pond.png" LockedUntilQuestID="3">
 		<Description><![CDATA[You see a pond here, with fish swimming around.]]></Description>
 		<Quests>
 			<Quest ID="4"/>
@@ -34,7 +34,7 @@
 	<Location X="0" Y="0" Name="Town Square" ImageName="TownSquare.png">
 		<Description><![CDATA[You see a fountain here.]]></Description>
 	</Location>
-	<Location X="1" Y="0" Name="Town Gate" ImageName="TownGate.png">
+	<Location X="1" Y="0" Name="Town Gate" ImageName="TownGate.png" LockedUntilQuestID="2">
 		<Description><![CDATA[There is a gate here, protecting the town from giant spiders.]]></Description>
 		<Quests>
 			<Quest ID="3"/>
@@ -46,7 +46,7 @@
 			<Monster ID="3" Percent="100"/>
 		</Monsters>
 	</Location>
-	<Location X="0" Y="1" Name="Herbalist's Hut" ImageName="HerbalistsHut.png">
+	<Location X="0" Y="1" Name="Herbalist's Hut" ImageName="HerbalistsHut.png" LockedUntilQuestID="1">
 		<Description><![CDATA[You see a small hut, with plants drying from the roof.]]></Description>
 		<Trader ID="2"/>
 		<Quests>

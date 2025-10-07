@@ -1,6 +1,6 @@
 # User documentation
 
-## What is Catheim?
+## What is Catheilm?
 The game Catheilm is a fantasy RPG, where players engage in turn-based combat against monsters, manage an inventory of weapons and consumables, complete quests, craft items using recipes, and trade with NPCs. The game tracks experience, levels, and progress, allowing players to save and load their game at any time. All gameplay is controlled through a simple mouse or touchpad interface.
 
 ## Installation
@@ -51,4 +51,5 @@ The interface is arranged as follows:
 - **Quests:** Some locations offer quests requiring the player to defeat certain enemies for rewards.
 - **Trading:** Certain locations allow trading, opening a trade screen to buy and sell items between the player and an NPC.
 - **Combat:** In locations with monsters, the player can attack using the equipped weapon, gain rewards for defeating them, or be defeated.
+
 - **Inventory Management:** Equip weapons, use consumables, and craft by certain recipes.
